@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# An example hook script to verify what is about to be pushed.  Called by "git
+# push" after it has checked the remote status, but before anything has been
+# pushed.  If this script exits with a non-zero status nothing will be pushed.
+#
+
+set -e
+
+echo "*****Running build ******"
+./gradlew clean build
+
+echo "*****Running tests ******"
+./gradlew clean test
+
+echo "******Running Checkstyle Main"
+./gradlew clean checkstyleMain
+
+echo "*******Running Checkstyle Test"
+.gradlew clean checkstyleTest
