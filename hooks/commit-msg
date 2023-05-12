@@ -3,7 +3,7 @@
 commit_msg=$(cat "$1")
 echo "$commit_msg"
 echo "$commit_msg"
-if [[ $commit_msg =~ ^\[[A-Za-z]+\][A-Za-z]+ ]]; then
+if [[ $commit_msg =~ ^\[[A-Za-z]+\][A-Za-z\\s]+ ]]; then
   exit 0
 else
   echo "Commit message not in correct format"
