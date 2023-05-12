@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -e
-
-if [[ $1 -eq ^\[[A-Za-z]+\][A-Za-z]+$ ]]; then
+commit_msg=$(cat "$1")
+echo "$commit_msg"
+if [[ $commit_msg =~ ^\[[A-Za-z]+\][A-Za-z]+ ]]; then
   exit 0
 else
   echo "Commit message not in correct format"

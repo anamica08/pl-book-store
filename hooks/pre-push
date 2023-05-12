@@ -12,4 +12,4 @@ echo "******Running Checkstyle Main"
 ./gradlew clean checkstyleMain
 
 echo "*******Running Checkstyle Test"
-.gradlew clean checkstyleTest
+./gradlew clean checkstyleTest
