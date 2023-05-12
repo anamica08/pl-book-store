@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+read -r line
+regex="\[[A-Za-z]+\][A-Za-z]+"
+  if [[ $line -eq $regex ]]; then
+    exit 0
+  else
+    echo "Commit message not in correct format"
+    exit 1
+fi
